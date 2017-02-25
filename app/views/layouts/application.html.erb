@@ -14,10 +14,15 @@
     <nav id="main-header" class="clearfix">
     <div class="wrapper">
       <div id="logo">
-        <h2>Jaclyn's Rails Forum</h2>
+        <h2><%= link_to "Jaclyn's Rails Forum", root_path %></h2>
       </div>
       <div id="buttons">
-        <%= link_to "New Post", new_post_path %>
+        <% if user_signed_in? %>
+          <%= link_to "New Post", new_post_path %>
+        <% else %>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          <%= link_to "Sign In", new_user_session_path %>
+        <% end %>
       </div>
       </div>
     </nav>
