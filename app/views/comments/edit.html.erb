@@ -1,0 +1,8 @@
+<h2>Edit Comment</h2>
+
+<%= form_for ([@post, @comment]) do |f| %>
+  Comment: <%= f.text_area :comment %><br />
+
+
+  <%= f.submit %>
+<% end %>

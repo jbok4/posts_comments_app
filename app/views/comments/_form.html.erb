@@ -1,7 +1,7 @@
 <!-- form_for([@post, @post.comments.build]) will do a post to myapp/posts/:post_id/comments/create and draw the comments fields -->
 
 <%= form_for ([@post, @post.comments.build]) do |f| %>
-  Comment: <%= f.text_field :comment %><br />
+  Comment: <%= f.text_area :comment %><br />
 
 
   <%= f.submit %>
