@@ -3,6 +3,7 @@
 <% @posts.each do |post| %>
 
   <p class="post_box"><strong><%= link_to post.title, post %></strong> Posted: <%= time_ago_in_words(post.created_at) %> ago</p>
+  <p>by <%= post.user.email %></p>
 <% end %>
 <br>
 
