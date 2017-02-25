@@ -1,20 +1,24 @@
-<div id="post_content">
+<div class="post_content">
 
   <h2><%= @post.title %></h2>
   <p>by <%= @post.user.email %></p>
   <p><%= @post.content %></p>
 
+     <div class="buttons clearfix"> 
+    <%= link_to 'Edit', edit_post_path(@post) %>
+    <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Delete Post?"} %>
+  </div> 
+
   <div id="comments">
-    <h2><%= @post.comments.count %></h2>
+    <h3><%= @post.comments.count %> Comments</h3>
     <%= render @post.comments  %>
     
     <h3>Reply to Thread</h3>
       <%= render partial: 'comments/form' %>
   </div>
-  
-  <%= link_to 'Edit', edit_post_path(@post) %></br>
-<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: "Delete Post?"} %></br>
+
 </div> 
+
 
 
 
