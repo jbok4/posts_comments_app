@@ -1,1 +1,6 @@
-<h2>Index File!!</h2>
+<% @posts.each do |post| %>
+
+  <p class="post_box"><strong><%= post.title%></strong> Posted: <%= time_ago_in_words(post.created_at) %> ago</p>
+<% end %>
+
+<%= link_to "New Post", new_post_path %>
