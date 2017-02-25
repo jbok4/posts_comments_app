@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Forum</title>
+    <title>Jaclyn's Rails Forum</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Raleway" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css">
   </head>
 
   <body>
+    <nav id="main-header" class="clearfix">
+    <div class="wrapper">
+      <div id="logo">
+        <h2>Jaclyn's Rails Forum</h2>
+      </div>
+      <div id="buttons">
+        <%= link_to "New Post", new_post_path %>
+      </div>
+      </div>
+    </nav>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="wrapper">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
 
+    <div class="wrapper">
+      <%= yield %>
+    </div>
 
-    <%= yield %>
   </body>
 </html>

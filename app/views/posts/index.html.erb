@@ -1,10 +1,11 @@
-<h2>Posts Index</h2>
+<div class="posts">
 
-<% @posts.each do |post| %>
+  <% @posts.each do |post| %>
+    <div class="post">
+      <p><%= link_to post.title, post %><br>
+      <span class="date">Posted: <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.email %></span></p>
+    </div>
+  <% end %>
+  <br>
 
-  <p class="post_box"><strong><%= link_to post.title, post %></strong> Posted: <%= time_ago_in_words(post.created_at) %> ago</p>
-  <p>by <%= post.user.email %></p>
-<% end %>
-<br>
-
-<%= link_to "New Post", new_post_path %>
+</div>
